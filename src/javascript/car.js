@@ -1,18 +1,15 @@
 class Car {
-  constructor(brand, year, fuelRate, distance) {
+  constructor(brand, year, fuelRate) {
     this.brand = brand;
     this.year = year;
     this.fuelRate = fuelRate;
-    this.distance = distance;
-    this.getInfo();
-    this.calcFuel();
   }
 
   getInfo() {
     console.log(
       "Модель:" +
         this.brand +
-        "-" +
+        " : " +
         this.year +
         ". Расход топлива: " +
         this.fuelRate +
@@ -20,9 +17,9 @@ class Car {
     );
   }
 
-  calcFuel() {
-    const calcFuel = (this.fuelRate * this.distance) / 100;
-    return calcFuel;
+  calcFuel(distance) {
+    const calcFuel = (this.fuelRate * distance) / 100;
+    return calcFuel + ` л на ${distance} км`;
   }
 }
 
