@@ -9,12 +9,20 @@ class Car {
   }
 
   getInfo() {
-    console.log("Модель:" + this.brand + "-" + this.year + '. Расход топлива: ' + this.fuelRate + ' л/100 км.');
+    console.log(
+      "Модель:" +
+        this.brand +
+        "-" +
+        this.year +
+        ". Расход топлива: " +
+        this.fuelRate +
+        " л/100 км."
+    );
   }
 
-  calcFuel(){
-      const calcFuel = (this.fuelRate *this.distance )/100
-      return calcFuel
+  calcFuel() {
+    const calcFuel = (this.fuelRate * this.distance) / 100;
+    return calcFuel;
   }
 }
 
