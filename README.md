@@ -1,4 +1,4 @@
-# 16.2-webpackToDo
+# 17-homework
 
 Install 'npm install'
 
