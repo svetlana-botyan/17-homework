@@ -1,6 +1,6 @@
 # 17-homework
 
-Install 'npm install'
+Install 'npm install' or 'npm i'
 
 Run build 'npm run build'
 

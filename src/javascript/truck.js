@@ -1,16 +1,20 @@
-import { Car } from "./car";
+import { Car } from './car'
 
 class Truck extends Car {
   cargoCabin = [];
 
-  constructor(brand, year, fuelRate, maxSlots) {
-    super(brand, year, fuelRate);
-    this.maxSlots = maxSlots;
+  constructor (props) {
+    super(props)
+    this.maxSlots = props.maxSlots || 1
   }
 
-  addCargo(item) {
-      if(this.cargoCabin.length<this.maxSlots) this.cargoCabin.push(item)
+  addCargo (item) {
+    if (this.cargoCabin.length < this.maxSlots) {
+      this.cargoCabin.push(item)
+    } else {
+      const error = new Error(this.brand + 'перегружаем')
+    }
   }
 }
 
-export { Truck };
+export { Truck }

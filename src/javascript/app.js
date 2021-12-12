@@ -1,34 +1,49 @@
-import "../scss/app.scss";
+import '../scss/app.scss'
 
-import { Car } from "./car";
-import { Truck } from "./truck";
-import { SportCar } from "./sport-car";
+import { Car } from './car'
+import { Truck } from './truck'
+import { SportCar } from './sport-car'
 
 // №1
-const carBMV = new Car("BMV X6", 2019, 6.6);
-carBMV.getInfo();
+const carBMV = new Car({
+  brand: 'BMV X6',
+  year: 2019,
+  fuelRate: 6.6
+})
+carBMV.getInfo()
 
-const distanse = 150;
-console.log("Расход топлива: " + carBMV.calcFuel(distanse));
+const distanse = 150
+console.log('Расход топлива: ' + carBMV.calcFuel(distanse) + ` л на ${distanse} км`)
 
 // №2
-const carVolvo = new Truck("Volvo XC 90", 2019, 7.7, 4);
-carVolvo.getInfo();
+const carVolvo = new Truck({
+  brand: 'Volvo XC 90',
+  year: 2019,
+  fuelRate: 7.7,
+  maxSlots: 4
+})
+carVolvo.getInfo()
 
-console.log("Расход топлива: " + carVolvo.calcFuel(distanse));
+console.log('Расход топлива: ' + carVolvo.calcFuel(distanse))
 
-carVolvo.addCargo(8);
-console.log(carVolvo.cargoCabin); //вывод массив
+carVolvo.addCargo(8)
+console.log(carVolvo.cargoCabin) // вывод массив
 
 // №3
-const carFerrari = new SportCar("Ferrari Roma", 2020, 9.7, 320);
-carFerrari.getInfo();
+const carFerrari = new SportCar({
+  brand: 'Ferrari Roma',
+  year: 2020,
+  fuelRate: 9.7,
+  maxSpeed: 320
+})
 
-console.log("Расход топлива: " + carFerrari.calcFuel(distanse));
+carFerrari.getInfo()
 
-console.log(carFerrari.start()); //завели машину
+console.log('Расход топлива: ' + carFerrari.calcFuel(distanse))
 
-const value = 250;
-carFerrari.speedUp(value);
+console.log(carFerrari.start()) // завели машину
 
-console.log(carFerrari.currentSpeed + " км/ч");
+const value = 250
+carFerrari.speedUp(value)
+
+console.log(carFerrari.currentSpeed + ' км/ч')
